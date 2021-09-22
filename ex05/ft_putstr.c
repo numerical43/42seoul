@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:57:43 by suekang           #+#    #+#             */
-/*   Updated: 2021/09/21 15:57:44 by suekang          ###   ########.fr       */
+/*   Updated: 2021/09/22 22:57:13 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ void	ft_putchar(char c)
 void	ft_putstr(char *str)
 {
 	char	c;
+	int		i;
 
+	i = 0;
 	while (c != '\0')
 	{
-		c = *str;
-		if (c != '\0')
-		{
-			ft_putstr(c);
-		}
-		str++;
+		c = *str[i];
+		ft_putstr(c);}
+		i++;
 	}
 }

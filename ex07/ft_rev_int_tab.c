@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:58:06 by suekang           #+#    #+#             */
-/*   Updated: 2021/09/21 15:58:08 by suekang          ###   ########.fr       */
+/*   Updated: 2021/09/22 22:58:16 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ void	ft_rev_int_tab(int *tab, int size)
 	while (i < (size / 2))
 	{
 		tmp = tab[i];
-		tab[i] = tab[j];
+		tab[i] = tab[j - i];
 		tab[j] = tmp;
 		i++;
-		j--;
 	}
 }

@@ -6,18 +6,11 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:58:14 by suekang           #+#    #+#             */
-/*   Updated: 2021/09/21 15:58:16 by suekang          ###   ########.fr       */
+/*   Updated: 2021/09/22 23:05:31 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
+#include <unistd.h>
 
 void	ft_sort_int_tab(int *tab, int size)
 {
@@ -30,9 +23,11 @@ void	ft_sort_int_tab(int *tab, int size)
 		j = 0;
 		while (j <= size - 1)
 		{	
-			if (tab[i] < tab[j])
+			if (tab[j] > tab[j+1])
 			{
-				ft_swap(&tab[i], &tab[j]);
+				temp = tap[j];
+				tap[j] = tab[j + 1];
+				tap[j + 1] = temp;
 			}
 			j++;
 		}
