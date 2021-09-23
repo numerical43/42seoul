@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 16:15:12 by suekang           #+#    #+#             */
-/*   Updated: 2021/09/20 01:02:46 by suekang          ###   ########.fr       */
+/*   Updated: 2021/09/23 15:02:57 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_comb(void)
 	comb[1] = '1';
 	comb[2] = '2';
 	while (comb[0] <= '7')
-	{	
+	{
 		comb[1] = comb[0] + 1;
 		while (comb[1] <= '8')
 		{
