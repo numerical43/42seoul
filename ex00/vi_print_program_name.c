@@ -6,24 +6,24 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 20:24:00 by suekang           #+#    #+#             */
-/*   Updated: 2021/09/26 20:41:36 by suekang          ###   ########.fr       */
+/*   Updated: 2021/09/26 23:41:11 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
 
 int	main(int argc, char **argv)
 {
 	int		i;
 
 	i = 0;
-	if (argc >= 1)
-	{
-		while (argv[0][i] != '\0')
-		{
-			write(1, &argv[0][i], 1);
-		}
-		write(1, "\n", 1);
-	}
-	return (0);
+	if (argc > 0)
+		ft_putstr(argv[0]);
+	write(1, "\n", 1);
 }

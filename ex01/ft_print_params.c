@@ -1,35 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/26 20:27:50 by suekang           #+#    #+#             */
-/*   Updated: 2021/09/26 20:43:42 by suekang          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <unistd.h>
+#include <stdio.h>
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
 
 int	main(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 1;
-	if (argc >= 2)
+	while (i < argc)
 	{
-		while (i < argc)
-		{
-			j = 0;
-			while (argv[i][j] != '\0')
-			{
-				write(1, &argv[i][j], 1);
-				j++;
-			}
-			i++;
-		}
+		ft_putstr(argv[i]);
+		ft_putstr("\n");
+		i++;
 	}
 	return (0);
 }
