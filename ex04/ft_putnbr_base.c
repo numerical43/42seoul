@@ -9,12 +9,12 @@ int	check_base(char *base)
 	j = 0;
 	if (base[0] == '\0' || base[1] == '\0')
 		return (0);
-	while (base[i])
+	while (base[i] != '\0')
 	{
 		j = i + 1;
 		if (base[i] == '+' || base[i] == '-' || base[i] < 32 || base[i] > 126)
 			return (0);
-		while (base[j])
+		while (base[j] != '\0')
 		{
 			if (base[i] == base[j])
 				return (0);
@@ -30,30 +30,37 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+void	ft_base(unsigned int nb, unsigned int size, char *base)
+{
+	if (nb < size)
+		ft_putchar(base[nb]);
+	if (nb >= size)
+	{
+		ft_base(nb / size, size, base);
+		ft_base(nb % size, size, base);
+	}
+}
+
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	size;
-	int	nbr_last[100];
-	int	i;
+	unsigned int	nb;
+	unsigned int	size;
+	int				i;
 
 	i = 0;
 	size = 0;
 	if (check_base(base))
 	{
+
 		if (nbr < 0)
 		{
-			nbr = -nbr;
+			nb = -nbr;
 			ft_putchar('-');
 		}
+		if (nbr >= 0)
+			nb = nbr;
 		while (base[size] != '\0')
 			size++;
-		while (nbr > 0)
-		{
-			nbr_last[i] = base[nbr % size];
-			nbr /= size;
-			i++;
-		}
-		while (--i >= 0)
-			ft_putchar(nbr_last[i]);
+		ft_base(nb, size, base);
 	}
 }
