@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	atoi(const char *nptr)
+int	atoi(const char *str)
 {
 	long	num;
 	long	sign;
@@ -9,19 +9,19 @@ int	atoi(const char *nptr)
 	num = 0;
 	sign = 1;
 	i = 0;
-	while ((nptr[i] !- '\0') && (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+	while ((str[i] != '\0') && (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 			|| str[i] == '\f' || str[i] == ' ' || str[i] == '\r'))
 		i++;
-	while (nptr[i] == '-' || nptr[i] == '+')
+	while (str[i] == '-' || str[i] == '+')
 	{
-		if (nptr[i] == '-')
+		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-	while (nptr[i] != '\0' && (nptr[i] >= '0' && nptr[i] <= '9'))
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
 	{
 		num *= 10;
-		num += nptr[i] - '0';
+		num += str[i] - '0';
 		i++;
 	}
 	if (num > 2147483647 && sign == 1)
