@@ -12,7 +12,7 @@ void	ft_putstr_fd(char *str)
 	
 	i = 0;
 	while (c)
-	{
+	{ 
 		c = *str[i];
 		ft_putstr_fd(c);
 		i++;

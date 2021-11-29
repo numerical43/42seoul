@@ -24,5 +24,4 @@ void	ft_putchar_fd(int nb)
 	}
 	else
 		ft_putchar(nb + '0');
-	return ;
 }
