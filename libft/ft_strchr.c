@@ -1,16 +1,17 @@
 #include "libft.h"
 
-void	*ft_memset(void *dest, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*destination;
-	unsigned char	source;
-	int		i;
+	int	i;
+	char	find;
 
-
-	destination = (unsigned char *)dest;
-	source = (unsigned char)source;
 	i = 0;
-	while (i++ < n)
-		*destination[i] = source;
-	return (dest);
+	find = (unsigned char)c;	
+	while (s[i])
+	{
+		if (s[i] == find)
+			return ((char *)s[i]);
+		i++;
+	}
+	return (NULL);
 }
