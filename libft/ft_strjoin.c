@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		c[i] = s1[i];
 	while (i++ < (s1_len + s2_len))
 		c[i] = s2[i - s1_len];
-	c[i] = '\n';
+	c[i] = '\0';
 
 	return (c);
 }
