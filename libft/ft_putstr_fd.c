@@ -1,11 +1,6 @@
 #include "libft.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr_fd(char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
 	char	c;
 	int	i;
@@ -14,7 +9,7 @@ void	ft_putstr_fd(char *str)
 	while (c)
 	{ 
 		c = *str[i];
-		ft_putstr_fd(c);
+		write(fd, *c, 1);
 		i++;
 	}
 }

@@ -6,6 +6,7 @@ void	*ft_memset(void *dest, int c, size_t n)
 	unsigned char	source;
 	int		i;
 
+
 	destination = (unsigned char *)dest;
 	source = (unsigned char)source;
 	i = 0;
