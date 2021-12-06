@@ -6,15 +6,16 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 16:11:48 by suekang           #+#    #+#             */
-/*   Updated: 2021/11/23 14:14:07 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/06 14:54:00 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
+	int				i;
 	unsigned char	c;
 
+	i = 0;
 	c = (unsigned char *)s;
 	while (i < n)
 	{

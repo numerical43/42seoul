@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:06:39 by suekang           #+#    #+#             */
-/*   Updated: 2021/11/23 14:06:41 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/06 14:54:54 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t num, size_t size)
 	void	*result;
 
 	result = malloc(size * num);
-	if(result == NULL)
+	if (result == NULL)
 		return (NULL);
 	ft_bzero(result, num);
 	return (result);
