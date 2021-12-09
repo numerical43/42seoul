@@ -6,11 +6,23 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:06:23 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/06 14:53:14 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/09 18:16:36 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	check_space(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while ((str[i] != '\0') && (str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\v' || str[i] == '\f'
+			|| str[i] == ' ' || str[i] == '\r'))
+		i++;
+	return (i);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -20,10 +32,7 @@ int	ft_atoi(const char *str)
 
 	num = 0;
 	sign = 1;
-	i = 0;
-	while ((str[i] != '\0') && (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == ' ' || str[i] == '\r'))
-		i++;
+	i = check_space(str);
 	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
