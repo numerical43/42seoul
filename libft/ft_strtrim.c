@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 15:44:36 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/06 15:44:38 by suekang          ###   ########.fr       */
+/*   Created: 2021/12/09 20:14:42 by suekang           #+#    #+#             */
+/*   Updated: 2021/12/09 20:17:02 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ char	*ft_strstrim(char const *s1, char const *set)
 	while (s1[start] && (s1[start] == set[start]))
 		start++;
 	while (s1[last] && (s1[last] == set[
-
 }

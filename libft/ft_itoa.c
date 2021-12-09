@@ -3,11 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 15:25:42 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/06 15:25:43 by suekang          ###   ########.fr       */
+/*   Created: 2021/12/09 20:10:55 by suekang           #+#    #+#             */
+/*   Updated: 2021/12/09 20:17:00 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_itoa(int n)
+{
+	char	*c;
+	int		i;
+
+	i = 0;
+	c = (char *)malloc(char * 11);
+	if (c == NULL)
+		return (NULL);
+	if (n < 0)
+	{
+		c[i] = '-';
+		i++;
+	}
+	if (n / 10 > 10)
+
+
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 15:45:08 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/06 15:45:09 by suekang          ###   ########.fr       */
+/*   Created: 2021/12/09 20:15:43 by suekang           #+#    #+#             */
+/*   Updated: 2021/12/09 20:20:37 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if((unsigned int)ft_strlen(s) < start)
 		return (ft_strdup(""));
-	
-}
+}}
