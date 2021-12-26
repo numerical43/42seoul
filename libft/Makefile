@@ -11,7 +11,10 @@
 # **************************************************************************** #
 
 NAME = libft.a
-CC = clang
+RM = rm -f
+AR = ar
+RCS = rcs
+CC = gcc
 CC_FLAGS = -Wall -Wextra -Werror
 
 SRCS =  ft_isalpha      \
@@ -51,7 +54,15 @@ SRCS =  ft_isalpha      \
 OBJS = $(SRCS:.c=o)
 
 $(NAME) : $(OBJS)
-        ar rc $(NAME) $(OBJS)
+        $(AR) $(RCS) $@ $^
 
 all: $(NAME)
+
+clean:
+	$(RM) $(OBJS)
+fclean: clean
+	$(RM) $(NAME)
+re : clean all
+
+.PHONY: all clean fclean re
 
