@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	check(char c, char const *set)
 {
 	int	i;
@@ -18,7 +19,7 @@ int	check(char c, char const *set)
 	i = 0;
 	while (set[i])
 	{
-		if(set[i] == c)
+		if (set[i] == c)
 			return (1);
 		i++;
 	}
