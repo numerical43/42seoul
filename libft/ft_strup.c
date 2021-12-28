@@ -15,15 +15,15 @@
 char	*ft_strup(char *src, int size)
 {
 	int		i;
-	char	*str;
+	char	*c;
 
 	i = 0;
-	if (str == NULL)
+	if (!c)
 		return (NULL);
 	while (src[i])
 	{
-		str[i] = src[i];
+		c[i] = src[i];
 		i++;
 	}
-	return (str);
+	return (c);
 }
