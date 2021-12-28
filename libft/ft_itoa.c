@@ -12,21 +12,44 @@
 
 #include "libft.h"
 
+int	nblen(int nb)
+{
+	int	len;
+
+	len = 0;
+	if (nb <= 0)
+		return (++len);
+	while (nb)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*c;
-	int		i;
+	int		len;
+	unsigned int nb;
 
-	i = 0;
-	c = (char *)malloc(char * 11);
+	len = nblen(n);
+	nb = (unsigned int)n;
+	c = (char *)malloc(char * len + 1);
 	if (c == NULL)
 		return (NULL);
+	if (nb == 0)
+		c[0] = '0';
 	if (n < 0)
 	{
-		c[i] = '-';
-		i++;
+		c[0] = '-';
+		nb = -nb;
 	}
-	if (n / 10 > 10)
-
-
+	c[len--] = nb % 10 + '0';
+	while (nb)
+	{
+		c[len--] = nb % 10 + '0';
+		nb = nb / 10;
+	}
+	return (c);
 }
