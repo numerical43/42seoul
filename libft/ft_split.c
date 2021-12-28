@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	word_count(char const *s, char c)
+int	count_str(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -26,14 +26,14 @@ int	word_count(char const *s, char c)
 		else
 		{
 			count++;
-			while (s[i] && s[i] != c)
+			while (s[i] && (s[i] != c))
 				i++;
 		}
 	}
 	return (count);
 }
 
-char	strstr(char *str, char const *s, int j, int strlen)
+char	make_word(char *str, char const *s, int j, int strlen)
 {
 	int	i;
 
@@ -54,8 +54,9 @@ char	**ft_sep(char **str, char const *s, char c, int count)
 	int	j;
 	int	strlen;
 
+	j = 0;
 	strlen = 0;
-	while (s[i] && i < count)
+	while (s[i] && (i < count))
 	{
 		while (s[j])
 		{
@@ -63,10 +64,10 @@ char	**ft_sep(char **str, char const *s, char c, int count)
 				strlen++;
 			j++;
 		}
-		str[i] = (char *)malloc(sizeof(char) * (strlen + 1));
+		str[i] = (char *)malloc(sizeof(char *) * (strlen + 1));
 		if (!str[i])
 			return (NULL);
-		strstr(str[i], s, j, strlen);
+		make_word(str[i], s, j, strlen);
 		strlen = 0;
 		i++;
 	}
@@ -79,9 +80,9 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int		count;
 
-	count = word_count(s, c);
 	if (!s)
 		return (NULL);
+	count = count_str(s, c);
 	str = (char **)malloc(sizeof(char **) * (count + 1));
 	ft_sep(str, s, c, count);
 	return (str);
