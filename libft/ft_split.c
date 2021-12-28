@@ -67,8 +67,11 @@ char **ft_split_split(char **str, char const *s, char c, int count)
     if (!str[i])
       return (NULL);
     strstr(str[i], s, j, strlen);
-    
+    strlen = 0;
+    i++;
   }
+  str[i] = NULL;
+  return (str);
 }
 
 char **ft_split(char const *s, char c)
