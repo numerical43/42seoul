@@ -55,14 +55,18 @@ OBJS = $(SRCS:.c=o)
 
 $(NAME) : $(OBJS)
         $(AR) $(RCS) $@ $^
+	
+%.o : %.c
+	$(CC) $(CC_FLAGS) -c $< -o $@
 
 all: $(NAME)
 
 clean:
 	$(RM) $(OBJS)
+	
 fclean: clean
 	$(RM) $(NAME)
-re : clean all
+	
+re : fclean all
 
 .PHONY: all clean fclean re
-
