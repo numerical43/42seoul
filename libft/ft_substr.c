@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:15:43 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/09 20:20:37 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/28 22:42:55 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*c;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	c = (char *)malloc(sizeof(char) * (len + 1));

@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:10:55 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/09 20:17:00 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/28 22:43:38 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	nblen(int nb)
 
 char	*ft_itoa(int n)
 {
-	char	*c;
-	int		len;
-	unsigned int nb;
+	char			*c;
+	int				len;
+	unsigned int	nb;
 
 	len = nblen(n);
 	nb = (unsigned int)n;
-	c = (char *)malloc(char * len + 1);
+	c = (char *)malloc(sizeof(char *) * (len + 1));
 	if (c == NULL)
 		return (NULL);
 	if (nb == 0)
