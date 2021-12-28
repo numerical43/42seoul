@@ -11,3 +11,75 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int word_count(char const *s, char c)
+{
+  int i;
+  int count;
+  
+  i = 0;
+  count = 0;
+  while (s[i])
+  {
+    if (s[i] == c)
+      i++;
+    else
+    {
+      count++;
+      while (s[i] && s[i] != c)
+        i++;
+    }
+  }
+  return (count)
+}
+
+char strstr(char *str char const *s, int j, int strlen)
+{
+  int i;
+  
+  i = 0;
+  while (strlen > 0)
+  {
+    str[i] = s[j - strlen];
+    i++;
+    strlen--;
+  }
+  str[i] = '\0';
+  return (str);
+}
+
+char **ft_split_split(char **str, char const *s, char c, int count)
+{
+  int i;
+  int j;
+  int strlen;
+  
+  strlen = 0;
+  while (s[i] && i < count)
+  {
+    while (s[j])
+    {
+      if (s[j] != c)
+          strlen++;
+      j++;
+    }
+    str[i] = (char *)malloc(sizeof(char) * (strlen + 1));
+    if (!str[i])
+      return (NULL);
+    strstr(str[i], s, j, strlen);
+    
+  }
+}
+
+char **ft_split(char const *s, char c)
+{
+  char **str;
+  int count;
+  
+  count = word_count(s, c);
+  if (!s)
+    return (NULL);
+  str = (char **)malloc(sizeof(char *) * (count + 1)));
+  ft_split_split(str, s, c, count);
+  return (str);
+}
