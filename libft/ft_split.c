@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 	count = word_count(s, c);
 	if (!s)
 		return (NULL);
-	str = (char **)malloc(sizeof(char *) * (count + 1));
+	str = (char **)malloc(sizeof(char **) * (count + 1));
 	ft_sep(str, s, c, count);
 	return (str);
 }
