@@ -19,11 +19,14 @@ char	*strrchr(const char *s, int c)
 
 	i = ft_strlen(s) - 1;
 	find = (size_t)c;
-	while (i >= 0)
+	if (s)
 	{
-		if (s[i] == find)
-			return ((char *)s[i]);
-		i--;
+		while (i >= 0)
+		{
+			if (s[i] == find)
+				return ((char *)s[i]);
+			i--;
+		}
 	}
 	return (NULL);
 }
