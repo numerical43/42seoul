@@ -35,14 +35,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	front = 0;
 	end = ft_strlen(s1);
-	if (s1 == NULL || set == NULL)
+	if (!s1 || !set)
 		return (NULL);
 	while (s1[front] && (s1[front] == set[front]))
 		front++;
 	while ((front < end) && check(s1[end - 1], set))
 		end--;
 	c = (char *)malloc(sizeof(char) * (end - front + 1));
-	if (c == NULL)
+	if (!c)
 		return (NULL);
 	while (front < end)
 		c[i++] = s1[front++];
