@@ -18,6 +18,7 @@ char	*ft_strup(char *src, int size)
 	char	*str;
 
 	i = 0;
+	str = (char *)malloc(sizeof(char *) * size);
 	if (str == NULL)
 		return (NULL);
 	while (src[i])
