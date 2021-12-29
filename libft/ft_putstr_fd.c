@@ -21,7 +21,7 @@ void	ft_putstr_fd(char *s, int fd)
 	while (c)
 	{
 		c = s[i];
-		write(fd, *c, 1);
+		write(fd, c, 1);
 		i++;
 	}
 }
