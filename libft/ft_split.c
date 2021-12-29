@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+static void	*free_m(char **str, size_t count)
+{
+	size_t	i;
+	
+	i = 0;
+	whlie (i++ < count)
+		free(str[i]);
+	free(str);
+	return (NULL);
+}
+
 int	count_str(char const *s, char c)
 {
 	int	i;
@@ -33,7 +44,7 @@ int	count_str(char const *s, char c)
 	return (count);
 }
 
-char	make_word(char *str, char const *s, int j, int strlen)
+char	resultIndex(char *str, char const *s, int j, int strlen)
 {
 	int	i;
 
@@ -54,22 +65,22 @@ char	**ft_sep(char **str, char const *s, char c, int count)
 	int	j;
 	int	strlen;
 
+	i = 0;
 	j = 0;
-	strlen = 0;
-	while (s[i] && (i < count))
+	while (s[i++] && (i < count))
 	{
-		while (s[j])
+		strlen = 0;
+		while (s[j++])
 		{
 			if (s[j] != c)
 				strlen++;
-			j++;
 		}
-		str[i] = (char *)malloc(sizeof(char *) * (strlen + 1));
-		if (!str[i])
+		if( !(str[i] = (char *)malloc(sizeof(char *) * (strlen + 1)))
+		{
+			free_m(str, i);
 			return (NULL);
-		make_word(str[i], s, j, strlen);
-		strlen = 0;
-		i++;
+		}
+		resultIndex(str[i], s, j, strlen);
 	}
 	str[i] = NULL;
 	return (str);
@@ -83,7 +94,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	count = count_str(s, c);
-	str = (char **)malloc(sizeof(char **) * (count + 1));
+	str = (char **)malloc(sizeof(char *) * (count + 1));
 	ft_sep(str, s, c, count);
 	return (str);
 }
