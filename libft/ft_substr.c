@@ -24,6 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		c[0] = '\0';
 		return (c);
 	}
-	ft_strlcpy(c, s + start, len + 1);
+	ft_strlcpy(c, s[start - 1], len + 1);
 	return (c);
 }
