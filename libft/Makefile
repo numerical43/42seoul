@@ -6,7 +6,7 @@
 #    By: suekang <suekang@student.42seoul>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:03:24 by suekang           #+#    #+#              #
-#    Updated: 2021/12/29 16:48:15 by suekang          ###   ########.fr        #
+#    Updated: 2021/12/29 19:23:54 by suekang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ AR = ar
 RCS = rcs
 CC = gcc
 CC_FLAGS = -Wall -Wextra -Werror
+INCLUDES = libft.h
+
 SRCS =  ft_isdigit.c      \
         ft_isalnum.c      \
         ft_isascii.c      \
@@ -64,7 +66,7 @@ clean:
 	
 fclean: clean
 	$(RM) $(NAME)
-	
-re : fclean all
+
+re: fclean all
 
 .PHONY: all clean fclean re
