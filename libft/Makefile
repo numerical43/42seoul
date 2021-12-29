@@ -6,7 +6,7 @@
 #    By: suekang <suekang@student.42seoul>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:03:24 by suekang           #+#    #+#              #
-#    Updated: 2021/12/28 23:54:41 by suekang          ###   ########.fr        #
+#    Updated: 2021/12/29 16:48:15 by suekang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,12 +47,12 @@ SRCS =  ft_isdigit.c      \
         ft_putchar_fd.c   \
         ft_putstr_fd.c    \
         ft_putendl_fd.c   \
-        ft_putnbr_fd.c    \
+        ft_putnbr_fd.c
 
-OBJS = $(SRCS:.c=o)
+OBJS = $(SRCS:.c=.o)
 
 $(NAME) : $(OBJS)
-        $(AR) $(RCS) $@ $^
+	$(AR) $(RCS) $@ $^
 	
 %.o : %.c
 	$(CC) $(CC_FLAGS) -c $< -o $@

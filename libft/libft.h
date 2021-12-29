@@ -6,10 +6,10 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:45:29 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/06 15:45:31 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/29 16:51:52 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#indef LIBFT_H
+#ifdef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>

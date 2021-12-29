@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:12:28 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/28 22:33:55 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/29 18:19:11 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	*free_m(char **str, size_t count)
 {
 	size_t	i;
-	
+
 	i = 0;
-	whlie (i++ < count)
+	while (i++ < count)
 		free(str[i]);
 	free(str);
 	return (NULL);
@@ -44,7 +44,7 @@ int	count_str(char const *s, char c)
 	return (count);
 }
 
-char	resultIndex(char *str, char const *s, int j, int strlen)
+char	in_index(char *str, char const *s, int j, int strlen)
 {
 	int	i;
 
@@ -72,12 +72,13 @@ char	**ft_sep(char **str, char const *s, char c, int count)
 		strlen = 0;
 		while (s[j] && s[j] != c)
 			strlen++;
-		if(!(str[i] = (char *)malloc(sizeof(char *) * (strlen + 1)))
+		str[i] = (char *)malloc(sizeof(char *) * (strlen + 1));
+		if (!str[i])
 		{
 			free_m(str, i);
 			return (NULL);
 		}
-		resultIndex(str[i], s, j, strlen);
+		in_index(str[i], s, j, strlen);
 	}
 	str[i] = NULL;
 	return (str);

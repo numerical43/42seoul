@@ -6,13 +6,13 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:07:27 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/09 20:16:51 by suekang          ###   ########.fr       */
+/*   Updated: 2021/12/29 18:19:44 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*c;
 
 	i = 0;
