@@ -67,15 +67,12 @@ char	**ft_sep(char **str, char const *s, char c, int count)
 
 	i = 0;
 	j = 0;
-	while (s[i++] && (i < count))
+	while (s[j++] && (i++ < count))
 	{
 		strlen = 0;
-		while (s[j++])
-		{
-			if (s[j] != c)
-				strlen++;
-		}
-		if( !(str[i] = (char *)malloc(sizeof(char *) * (strlen + 1)))
+		while (s[j] && s[j] != c)
+			strlen++;
+		if(!(str[i] = (char *)malloc(sizeof(char *) * (strlen + 1)))
 		{
 			free_m(str, i);
 			return (NULL);
