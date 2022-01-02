@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:45:29 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/02 19:56:16 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/01/02 20:05:44 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -35,7 +35,7 @@ void    ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void    ft_putstr_fd(char *s, int fd);
 char    *ft_strchr(const char *s, int c);
-int     ft_strcmp(const char *s1, const char *s2);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
 char    *ft_strjoin(char const *s1, char const *s2);
 size_t  ft_strlcat(char *dest, const char *src, size_t size);
