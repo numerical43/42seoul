@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:11:52 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/09 20:17:01 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/02 19:43:22 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_putendl_fd(char *s, int fd)
 
 	i = 0;
 	if (fd < 0)
-		return (NULL);
+		return ;
 	while (s[i])
 	{
-		write(fd, s[i], 1);
+		write(fd, &s[i], 1);
 		i++;
 	}
 	write(fd, "\n", 1);

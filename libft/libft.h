@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:45:29 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/29 19:39:38 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/02 19:56:16 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -32,18 +32,18 @@ void    *ft_memmove(void *dest, const void *src, size_t n);
 void    *ft_memset(void *s, int c, size_t n);
 void    ft_putchar_fd(char c, int fd);
 void    ft_putendl_fd(char *s, int fd);
-void    ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void    ft_putstr_fd(char *s, int fd);
 char    *ft_strchr(const char *s, int c);
 int     ft_strcmp(const char *s1, const char *s2);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
 char    *ft_strjoin(char const *s1, char const *s2);
 size_t  ft_strlcat(char *dest, const char *src, size_t size);
-unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size);
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
 int     ft_strlen(const char *str);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char    *strnstr(const char *big, const char *little, size_t len);
-char    *strrchr(const char *s, int c);
+char    *ft_strnstr(const char *big, const char *little, size_t len);
+char    *ft_strrchr(const char *s, int c);
 char    *ft_strstrim(char const *s1, char const *set);
 char    *ft_strup(char *src, int size);
 char    *ft_substr(char const *s, unsigned int start, size_t len);

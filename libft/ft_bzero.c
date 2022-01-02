@@ -6,9 +6,11 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:07:27 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/29 18:19:44 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/02 19:41:05 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

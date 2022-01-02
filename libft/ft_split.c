@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:12:28 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/29 18:19:11 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/02 19:46:47 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	count_str(char const *s, char c)
 	return (count);
 }
 
-char	in_index(char *str, char const *s, int j, int strlen)
+char	*in_index(char *str, char const *s, int j, int strlen)
 {
 	int	i;
 

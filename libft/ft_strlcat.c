@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:13:32 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/09 20:17:01 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/02 19:47:34 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	i = 0;
 	if (!dest || !src)
-		return (NULL);
+		return (0);
 	destlen = ft_strlen(dest);
 	while (i < size - 1)
 	{
