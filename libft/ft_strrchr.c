@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	find = (char)c;
 	if (s)
 	{
-		while (i >= 0)
+		while (i-- >= 0)
 		{
-			if (s[i] == find)
-				return ((char *)&(s[i]));
-			i--;
+			if (s == find)
+				return (&s);
+			s++;
 		}
 	}
 	return (0);
