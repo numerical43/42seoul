@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	find;
 	int		i;
 
-	i = ft_strlen(s) - 1;
+	i = (int)(ft_strlen(s)) - 1;
 	find = (char)c;
 	if (s)
 	{
