@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static void	*free_m(char **str, size_t count)
+static void	*free_mem(char **str, int count)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i++ < count)
@@ -44,14 +44,14 @@ int	count_str(char const *s, char c)
 	return (count);
 }
 
-char	*in_index(char *str, char const *s, int j, int strlen)
+char	*make_array(char *str, const char *p, int strlen)
 {
 	int	i;
 
 	i = 0;
 	while (strlen > 0)
 	{
-		str[i] = s[j - strlen];
+		str[i] = p++;
 		i++;
 		strlen--;
 	}
@@ -59,26 +59,27 @@ char	*in_index(char *str, char const *s, int j, int strlen)
 	return (str);
 }
 
-char	**ft_sep(char **str, char const *s, char c, int count)
+char	**ft_sep(char **str, const char *p, char c, int count)
 {
 	int	i;
-	int	j;
 	int	strlen;
 
 	i = 0;
-	j = 0;
-	while (s[j++] && (i++ < count))
+	while (i < count)
 	{
 		strlen = 0;
-		while (s[j] && s[j] != c)
+		while (p == c)
+			p++;
+		while (p && p != c)
 			strlen++;
 		str[i] = (char *)malloc(sizeof(char *) * (strlen + 1));
 		if (!str[i])
 		{
-			free_m(str, i);
+			free_mem(str, i);
 			return (NULL);
 		}
-		in_index(str[i], s, j, strlen);
+		make_array(str[i], p, strlen);
+		i++;
 	}
 	str[i] = NULL;
 	return (str);
@@ -87,12 +88,14 @@ char	**ft_sep(char **str, char const *s, char c, int count)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
+	const char	*p;
 	int		count;
 
 	if (!s)
 		return (NULL);
 	count = count_str(s, c);
 	str = (char **)malloc(sizeof(char *) * (count + 1));
-	ft_sep(str, s, c, count);
+	p = (const char *)s;
+	ft_sep(str, p, c, count);
 	return (str);
 }
