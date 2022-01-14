@@ -50,5 +50,5 @@ int	ft_atoi(const char *str)
 	if (num < 2147483648 && sign == -1)
 		return (0);
 	num *= sign;
-	return (num);
+	return ((int)num);
 }
