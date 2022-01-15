@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:15:43 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/02 19:50:48 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/01/15 18:00:01 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*c;
+	size_t	slen;
 
-	c = (char *)malloc(sizeof(char) * (len + 1));
-	if (!c || !s)
+	if (!s)
 		return (NULL);
-	if (start == 0)
-	{
-		c[0] = '\0';
-		return (c);
-	}
-	ft_strlcpy(c, (char *)&(s[start - 1]), len + 1);
+	if (ft_strlen(s) > len)
+		slen = len;
+	else
+		slen = ft_strlen(s);
+	if (start > slen)
+		return (ft_strdup("")); //메모리를 할당받은 후 return해야하기 때문에
+	c = (char *)malloc(sizeof(char) * (slen + 1));
+	if (!c)
+		return (NULL);
+	ft_strlcpy(c, (char *)s + start, slen + 1);
 	return (c);
 }
