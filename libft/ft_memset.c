@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:11:34 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/02 20:19:25 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/01/15 13:49:02 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,4 @@ void	*ft_memset(void *s, int c, size_t n)
 	while (i < n)
 		str[i++] = (unsigned char)c;
 	return (s);
-}
-
-int main(void)
-{
-	char tab[100];
-
-	memset(tab, 0, 100);
-	ft_memset(tab, 'A', 42);
-	if (tab[42] == 0)
-		;
-
-	return (0);
 }

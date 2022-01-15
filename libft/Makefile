@@ -6,7 +6,7 @@
 #    By: suekang <suekang@student.42seoul>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:03:24 by suekang           #+#    #+#              #
-#    Updated: 2021/12/29 19:23:54 by suekang          ###   ########.fr        #
+#    Updated: 2022/01/15 17:18:07 by suekang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS =  ft_isdigit.c      \
         ft_memmove.c      \
         ft_strlcpy.c      \
         ft_strlcat.c      \
+		ft_strncmp.c	  \
         ft_toupper.c      \
         ft_tolower.c      \
         ft_strchr.c       \
@@ -38,6 +39,7 @@ SRCS =  ft_isdigit.c      \
         ft_strnstr.c      \
         ft_atoi.c         \
         ft_calloc.c       \
+		ft_isalpha.c	  \
         ft_strdup.c       \
         ft_substr.c       \
         ft_strjoin.c      \

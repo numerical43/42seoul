@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:11:10 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/02 20:36:07 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/01/15 14:36:11 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
-			return ((void *)str);
+			return (((void *)str + i));
 		i++;
 	}
 	return (0);

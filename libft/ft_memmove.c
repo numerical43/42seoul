@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:11:30 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/02 20:48:21 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/01/15 13:58:58 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest < src)
 	{
 		while (i < n)
+		{
 			((char *)dest)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
 	else
 	{
-		while (i++ < n)
+		while (i < n)
+		{
 			((char *)dest)[n - i - 1] = ((char *)src)[n - i - 1];
+			i++;
+		}
 	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:12:28 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/02 19:46:47 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/01/15 13:46:52 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*make_array(char *str, const char *p, int strlen)
 	i = 0;
 	while (strlen > 0)
 	{
-		str[i] = p++;
+		str[i] = *p++;
 		i++;
 		strlen--;
 	}
@@ -68,9 +68,9 @@ char	**ft_sep(char **str, const char *p, char c, int count)
 	while (i < count)
 	{
 		strlen = 0;
-		while (p == c)
+		while (*p == c)
 			p++;
-		while (p && p != c)
+		while (p && *p != c)
 			strlen++;
 		str[i] = (char *)malloc(sizeof(char *) * (strlen + 1));
 		if (!str[i])

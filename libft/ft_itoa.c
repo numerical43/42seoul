@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:10:55 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/28 22:43:38 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/15 13:47:25 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	c = (char *)malloc(sizeof(char *) * (i + 1));
 	if (c == NULL)
 		return (NULL);
-	c[i--] = '/0';
+	c[i--] = '\0';
 	if (nb == 0)
 		c[0] = '0';
 	if (n < 0)
