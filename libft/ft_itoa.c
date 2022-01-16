@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 
 	i = nbindex(n);
 	nb = (unsigned int)n;
-	c = (char *)malloc(sizeof(char *) * (i + 1));
+	c = (char *)malloc(sizeof(char) * (i + 1));
 	if (c == NULL)
 		return (NULL);
 	c[i--] = '\0';
