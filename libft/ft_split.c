@@ -9,7 +9,7 @@
 /*   Updated: 2022/01/15 18:22:30 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//
+
 #include "libft.h"
 
 static void	*free_mem(char **result, int count)
@@ -80,7 +80,7 @@ char	**ft_sep(char **result, const char *s, char c, int word_count)
 			j++;
 			word_len++;
 		}
-		result[i] = (char *)malloc(sizeof(char *) * (word_len + 1));
+		result[i] = (char *)malloc(sizeof(char) * (word_len + 1));
 		if (!result[i])
 		{
 			free_mem(result, i);
@@ -89,7 +89,7 @@ char	**ft_sep(char **result, const char *s, char c, int word_count)
 		make_word(result[i], s, j, word_len);
 		i++;
 	}
-	result[i] = NULL;
+	result[i] = '\0';
 	return (result);
 }
 
