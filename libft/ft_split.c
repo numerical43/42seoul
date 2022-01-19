@@ -89,7 +89,7 @@ char	**ft_sep(char **result, const char *s, char c, int word_count)
 		make_word(result[i], s, j, word_len);
 		i++;
 	}
-	result[i] = '\0';
+	result[i] = NULL;
 	return (result);
 }
 
