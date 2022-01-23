@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		slen = ft_strlen(s);
 	if (start > slen)
-		return (ft_strdup("")); //메모리를 할당받은 후 return해야하기 때문에
+		return (ft_strdup(""));
 	c = (char *)malloc(sizeof(char) * (slen + 1));
 	if (!c)
 		return (NULL);

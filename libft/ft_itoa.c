@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	nbindex(int n)
+static int	nbindex(int n)
 {
 	int	i;
 

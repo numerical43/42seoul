@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	check_space(const char *str)
+static int	check_space(const char *str)
 {
 	int	i;
 
