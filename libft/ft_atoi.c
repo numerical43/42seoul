@@ -26,9 +26,9 @@ static int	check_space(const char *str)
 
 int	ft_atoi(const char *str)
 {
-	unsigned long	num;
-	int				sign;
-	int				i;
+	unsigned long long	num;
+	int						sign;
+	int						i;
 
 	num = 0;
 	sign = 1;
