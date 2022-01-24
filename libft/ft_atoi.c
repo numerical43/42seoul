@@ -45,6 +45,11 @@ int	ft_atoi(const char *str)
 		num += str[i] - '0';
 		i++;
 	}
+	if (num >= 9223372036854775807 && sign == 1)
+		return (-1);
+	if (num >= 9223372036854775809 && sign == -1)
+		return (0);
+	if (
 	num *= sign;
 	return ((int)num);
 }
