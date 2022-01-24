@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:14:42 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/15 18:09:50 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/24 22:15:51 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	front = 0;
-	end = ft_strlen(s1);
 	if (!s1 || !set)
 		return (NULL);
+	end = ft_strlen(s1);
 	while (s1[front] && check(s1[front], set))
 		front++;
 	while ((front < end) && check(s1[end - 1], set))

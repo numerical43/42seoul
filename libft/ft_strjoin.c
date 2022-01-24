@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:13:20 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/15 18:02:07 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/24 22:09:58 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 
 	i = 0;
-	c = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (!s1 || !s2 || !c)
+	if (!s1 || !s2)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
+	c = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!c)
+		return (NULL);
 	while (i < s1_len)
 	{
 		c[i] = s1[i];

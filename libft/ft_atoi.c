@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:06:57 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/15 17:16:32 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/24 22:23:09 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,6 @@ int	ft_atoi(const char *str)
 		num += str[i] - '0';
 		i++;
 	}
-	if (num > 2147483647 && sign == 1)
-		return (-1);
-	if (num > 2147483648 && sign == -1)
-		return (0);
 	num *= sign;
 	return ((int)num);
 }
