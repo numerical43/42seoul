@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:15:43 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/15 18:00:01 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/26 00:48:11 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	slen = ft_strlen(s);
-	if (start >= slen)
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
+	slen = ft_strlen(s + start);
+	if (slen < len)
+		len = slen;
 	c = (char *)malloc(sizeof(char) * (len + 1));
 	if (!c)
 		return (NULL);
