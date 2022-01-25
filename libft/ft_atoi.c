@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:06:57 by suekang           #+#    #+#             */
-/*   Updated: 2022/01/24 23:36:36 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/25 00:53:47 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	check_space(const char *str)
 
 int	ft_atoi(const char *str)
 {
-	unsigned long long	num;
+	unsigned long long		num;
 	int						sign;
 	int						i;
 

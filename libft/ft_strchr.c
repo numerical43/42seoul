@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 20:12:51 by suekang           #+#    #+#             */
-/*   Updated: 2021/12/09 20:17:01 by suekang          ###   ########.fr       */
+/*   Updated: 2022/01/25 19:53:02 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if ((unsigned char)c == s[i])
-		return ((char *)(&s[i]));
+		return ((char *)s + i);
 	return (NULL);
 }
