@@ -6,11 +6,26 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/12 18:45:44 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/12 18:53:56 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
 #include <fcntl.h>
+
+static char *free_mem(char *result, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i <= count)
+	{
+		free(result[i]);
+		result[i] = NULL;
+		i++;
+	}
+	free(result);
+	return (NULL);
+}
 
 char	*get_resultline(char *resultline, char buffer)
 {
@@ -58,6 +73,7 @@ char	*get_next_line(int fd)
 		else
 			resultline = ft_strjoin(resultline, buffer);
 	}
+	free_mem;
 	return (resultline);
 }
 
