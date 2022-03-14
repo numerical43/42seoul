@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:03:08 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/14 17:12:57 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/14 18:44:43 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strlen(const char *str)
 	size_t	strlen;
 
 	strlen = 0;
-	while (str[strlen] && (str[strlen] != '\n'))
+	while (str[strlen])
 		strlen++;
 	return (strlen);
 }
@@ -29,7 +29,7 @@ char	*ft_strdup(char *src)
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (!str || !src)
+	if (!str)
 		return (NULL);
 	while (src[i])
 	{

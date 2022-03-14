@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:56 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/12 16:11:52 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/14 18:52:19 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char		*get_next_line(int fd);
-char		*ft_strjoin(char const *s1, char const *s2);
-static char	**free_mem(char **result, int count);
-size_t		ft_strlen(const char *str);
+char	*get_next_line(int fd);
+char	*get_line(char *line, int fd);
+char	*get_result(char *result);
+char	*ft_strdup(char *src);
+char	*ft_strjoin(char const *s1, char const *s2);
+char 	*ft_strchr(const char *s, int c);
+int		ft_strlen(const char *str);
 
 #endif
