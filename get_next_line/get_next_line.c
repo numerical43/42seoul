@@ -6,78 +6,57 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/12 18:53:56 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:12:55 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
 #include <fcntl.h>
 
-static char *free_mem(char *result, int count)
+char	*get_line(char *line, char *result)
 {
-	int	i;
+	int		i;
 
-	i = 0;
-	while (i <= count)
-	{
-		free(result[i]);
-		result[i] = NULL;
-		i++;
-	}
-	free(result);
-	return (NULL);
+	i = ft_strlen(line);
+	result = ft_strdup(line);
+	line = ft_strdup(line + i);
+	while (!result[i])
+		result[i] = '\0';
+	return (result);
 }
 
-char	*get_resultline(char *resultline, char buffer)
+char	*get_buffer(char *line, int fd)
 {
-	size_t	size;
+	int		size;
+	char	*buffer;
 
-	size = ft_strlen(buffer);
-	resultline = ft_strjoin(resultline, buffer);
-	resultline = get_newline(resultline);
-	buffer = ft_strdup(buffer + size);
-	return (resultline);
-}
-
-char	*get_newline(char *resultline)
-{
-	int	i;
-
-	i = 0;
-	while (1)
+	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buffer)
+		return (NULL);
+	while (!ft_strchr(line, '\n'))
 	{
-		if (resultline[i] == '\0')
+		size = read(fd, buffer, BUFFER_SIZE);
+		if (size <= 0)
 		{
-			resultline[i] = '\n';
-			resultline[i + 1] = '\0';
-			break ;
+			free(buffer);
+			return (NULL);
 		}
-		i++;
+		buffer[size] = '\0';
+		line = ft_strjoin(line, size);
 	}
-	return (resultline);
+	free(buffer);
+	return (line);
 }
 
 char	*get_next_line(int fd)
 {
-	char	*resultline[OPEN_MAX];
-	char	buffer[BUFFER_SIZE + 1];
-	int		size;
+	char		*result;
+	static char	*line;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
-	
-	while (1)
-	{
-		size = read(fd, buffer, BUFFER_SIZE);
-		if (ft_strstr(buffer, '\n'))
-		{
-			resultline = get_resultline(resultline, buffer);
-			break ;
-		}
-		else
-			resultline = ft_strjoin(resultline, buffer);
-	}
-	free_mem;
-	return (resultline);
+	line = get_buffer(line, fd);
+	result = get_line(line, result);
+	return (result);
 }
 
 int	main(void)

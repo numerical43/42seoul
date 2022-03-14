@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:03:08 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/14 15:44:15 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/14 17:12:57 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdup(char *src)
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (str == NULL)
+	if (!str || !src)
 		return (NULL);
 	while (src[i])
 	{
@@ -71,4 +71,14 @@ char	*ft_strchr(const char *s, int c)
 {
 	int				i;
 	unsigned char	find;
+	
+	i = 0;
+	find = (unsigned char)c;
+	while (s[i])
+	{
+		if (s[i] == find)
+			return ((char *)s + i);
+		i++;
+	}
+	return (0);
 }
