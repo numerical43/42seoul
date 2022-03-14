@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:03:08 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/12 18:41:31 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/14 15:44:15 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	c[i] = '\0';
 	return (c);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int				i;
+	unsigned char	find;
 }
