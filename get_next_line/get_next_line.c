@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/15 17:11:44 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/15 18:20:58 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -16,10 +16,14 @@ char	*get_result(char *result)
 	int	i;
 
 	i = 0;
-	while (result[i] != '\n' || result[i])
-		i++;
-	while (!result[++i])
-		result[i] = '\0';
+	if (result)
+	{
+		while (result[i] != '\n' || !(result[i]))
+			i++;
+		while (result[++i])
+			result[i] = '\0';
+	}
+	result[i] = '\0';
 	return (result);
 }
 

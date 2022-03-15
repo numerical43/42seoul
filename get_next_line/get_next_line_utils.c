@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:03:08 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/15 15:46:34 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/15 18:09:53 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	ft_strlen(const char *str)
 {
 	size_t	strlen;
-
+	
 	strlen = 0;
+	if (!str)
+		return (strlen);
 	while (str[strlen])
 		strlen++;
 	return (strlen);
@@ -36,6 +38,7 @@ char	*ft_strdup(char *src)
 		str[i] = src[i];
 		i++;
 	}
+
 	str[i] = '\0';
 	return (str);
 }
@@ -74,6 +77,8 @@ char	*ft_strchr(const char *s, int c)
 
 	i = 0;
 	find = (unsigned char)c;
+	if (!s)
+		return ((char *)s);
 	while (s[i])
 	{
 		if (s[i] == find)
