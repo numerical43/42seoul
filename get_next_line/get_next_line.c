@@ -6,25 +6,20 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/14 18:51:19 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/15 17:11:44 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
-#include <fcntl.h>
 
 char	*get_result(char *result)
 {
 	int	i;
 
 	i = 0;
-	while (result[i] != '\n')
+	while (result[i] != '\n' || result[i])
 		i++;
-	i++;
-	while (!result[i])
-	{
+	while (!result[++i])
 		result[i] = '\0';
-		i++;
-	}
 	return (result);
 }
 
@@ -41,7 +36,8 @@ char	*clean_line(char *line)
 	temp = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
 	if (!temp)
 		return (NULL);
-	while(!line[i + j])
+	i++;
+	while (!line[i + j])
 	{
 		temp[j] = line[i + j];
 		j++;
@@ -56,13 +52,14 @@ char	*get_line(char *line, int fd)
 	int		size;
 	char	*buffer;
 
+	size = 1;
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	while (!ft_strchr(line, '\n')) //개행이 아니라 그냥 eof로 끝났을 때 조건 필요
+	while (!ft_strchr(line, '\n') && size > 0)
 	{
 		size = read(fd, buffer, BUFFER_SIZE);
-		if (size <= 0)
+		if (size < 0)
 		{
 			free(buffer);
 			return (NULL);
@@ -85,6 +82,8 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (NULL);
 	result = ft_strdup(line);
+	if (!result)
+		return (NULL);
 	result = get_result(result);
 	line = clean_line(line);
 	return (result);

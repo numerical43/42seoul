@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:03:08 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/14 18:44:43 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/15 15:46:34 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	int				i;
 	unsigned char	find;
-	
+
 	i = 0;
 	find = (unsigned char)c;
 	while (s[i])
