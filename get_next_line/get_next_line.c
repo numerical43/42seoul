@@ -18,10 +18,8 @@ char	*get_result(char *result)
 	i = 0;
 	if (result)
 	{
-		while (result[i] != '\n' || !(result[i]))
+		while (result[i] || (result[i] == '\n'))
 			i++;
-		while (result[++i])
-			result[i] = '\0';
 	}
 	result[i] = '\0';
 	return (result);
@@ -35,12 +33,11 @@ char	*clean_line(char *line)
 
 	i = 0;
 	j = 0;
-	while (!line[i] && line[i] != '\n')
+	while (line[i] || line[i] == '\n')
 		i++;
 	temp = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
 	if (!temp)
 		return (NULL);
-	i++;
 	while (!line[i + j])
 	{
 		temp[j] = line[i + j];
