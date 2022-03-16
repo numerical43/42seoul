@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/15 18:20:58 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/16 18:38:58 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -16,11 +16,12 @@ char	*get_result(char *result)
 	int	i;
 
 	i = 0;
-	if (result)
-	{
-		while (result[i] || (result[i] == '\n'))
-			i++;
-	}
+	if (!result)
+		return (NULL);
+	while (result[i] && result[i] != '\n')
+		i++;
+	if (result[i] == '\n')
+		i++;
 	result[i] = '\0';
 	return (result);
 }
@@ -33,18 +34,22 @@ char	*clean_line(char *line)
 
 	i = 0;
 	j = 0;
-	while (line[i] || line[i] == '\n')
+	while (line[i] && line[i] != '\n')
+		i++;
+	if (line[i] == '\n')
 		i++;
 	temp = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
 	if (!temp)
 		return (NULL);
-	while (!line[i + j])
+	while (line[i + j])
 	{
 		temp[j] = line[i + j];
 		j++;
 	}
 	temp[j] = '\0';
 	free(line);
+	if (j == 0)
+		return (NULL);
 	return (temp);
 }
 
@@ -53,29 +58,27 @@ char	*get_line(char *line, int fd)
 	int		size;
 	char	*buffer;
 
-	size = 1;
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	while (!ft_strchr(line, '\n') && size > 0)
+	while (!ft_strchr(line, '\n'))
 	{
 		size = read(fd, buffer, BUFFER_SIZE);
-		if (size < 0)
-		{
-			free(buffer);
-			return (NULL);
-		}
+		if (size <= 0)
+			break;
 		buffer[size] = '\0';
 		line = ft_strjoin(line, buffer);
 	}
 	free(buffer);
+	if (size == -1)
+		return (NULL);
 	return (line);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*result;
-	static char	*line;
+	static char	*line = NULL;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
@@ -83,19 +86,7 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (NULL);
 	result = ft_strdup(line);
-	if (!result)
-		return (NULL);
 	result = get_result(result);
 	line = clean_line(line);
 	return (result);
 }
-
-//int	main(void)
-//{
-//	int		fd;
-//	char	*result;
-//
-//	fd = open("test.txt", O_RDONLY);
-//	result = get_next_line(fd);
-//	return (0);
-//}
