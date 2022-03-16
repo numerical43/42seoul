@@ -9,7 +9,10 @@ int	main(void)
 
 	fd = open("test.txt", O_RDONLY);
 	result = get_next_line(fd);
-	printf("0134567890 : %s\n", result);
-
+	printf("01234567890123456789012345678901234567890 : %s\n", result);
+	result = get_next_line(fd);
+	printf("01234567890123456789012345678901234567890 : %s\n", result);
+	close(fd);
+	system("leaks a.out");
 	return (0);
 }

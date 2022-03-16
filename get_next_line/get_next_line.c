@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/16 18:38:58 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/16 19:05:40 by hdoo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -38,7 +38,10 @@ char	*clean_line(char *line)
 		i++;
 	if (line[i] == '\n')
 		i++;
+	if ((ft_strlen(line) == 0)
+		return (0);
 	temp = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
+	printf("clean_line temp: %p\n", temp);
 	if (!temp)
 		return (NULL);
 	while (line[i + j])
@@ -48,8 +51,6 @@ char	*clean_line(char *line)
 	}
 	temp[j] = '\0';
 	free(line);
-	if (j == 0)
-		return (NULL);
 	return (temp);
 }
 
@@ -59,6 +60,7 @@ char	*get_line(char *line, int fd)
 	char	*buffer;
 
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	printf("buffer: %p\n", buffer);
 	if (!buffer)
 		return (NULL);
 	while (!ft_strchr(line, '\n'))
@@ -68,6 +70,7 @@ char	*get_line(char *line, int fd)
 			break;
 		buffer[size] = '\0';
 		line = ft_strjoin(line, buffer);
+		printf("join: %p\n", line);
 	}
 	free(buffer);
 	if (size == -1)
@@ -86,6 +89,7 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (NULL);
 	result = ft_strdup(line);
+	printf("result: %p\n", result);
 	result = get_result(result);
 	line = clean_line(line);
 	return (result);

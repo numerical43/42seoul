@@ -1,0 +1,76 @@
+Process:         a.out [76893]
+Path:            /Volumes/VOLUME/*/a.out
+Load Address:    0x103bdb000
+Identifier:      a.out
+Version:         ???
+Code Type:       X86-64
+Parent Process:  zsh [76812]
+
+Date/Time:       2022-03-16 18:59:57.781 +0900
+Launch Time:     2022-03-16 18:59:57.411 +0900
+OS Version:      Mac OS X 10.15.7 (19H1824)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 12.3 (12C33)
+
+Physical footprint:         312K
+Physical footprint (peak):  312K
+----
+
+leaks Report Version: 4.0
+Process 76893: 158 nodes malloced for 12 KB
+Process 76893: 2 leaks for 64 total leaked bytes.
+
+    2 (64 bytes) << TOTAL >>
+      1 (48 bytes) ROOT LEAK: 0x7ffc61405850 [48]  length: 42  "01234567890123456789012345678901234567890"
+      1 (16 bytes) ROOT LEAK: 0x7ffc61405840 [16]
+
+buffer: 0x7ffc61405840
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405860
+join: 0x7ffc61405850
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc61405870
+join: 0x7ffc61405890
+join: 0x7ffc614058b0
+join: 0x7ffc61405850
+join: 0x7ffc614058b0
+join: 0x7ffc61405850
+join: 0x7ffc614058b0
+join: 0x7ffc61405850
+join: 0x7ffc614058b0
+join: 0x7ffc61405850
+join: 0x7ffc614058b0
+join: 0x7ffc61405850
+join: 0x7ffc614058b0
+result: 0x7ffc61405850
+clean_line temp: 0x7ffc61405840
+01234567890123456789012345678901234567890 : 01234567890123456789012345678901234567890
+
+buffer: 0x7ffc61405880
+01234567890123456789012345678901234567890 : (null)
