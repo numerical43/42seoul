@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/17 21:52:41 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/17 22:09:46 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -63,7 +63,7 @@ char	*get_line(char *line, int fd)
 char	*get_next_line(int fd)
 {
 	char		*result;
-	static char	*line = NULL;
+	static char	*line;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
