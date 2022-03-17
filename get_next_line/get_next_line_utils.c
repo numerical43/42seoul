@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:03:08 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/16 18:57:36 by hdoo             ###   ########.fr       */
+/*   Updated: 2022/03/17 20:36:28 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strlen(const char *str)
 {
 	size_t	strlen;
-	
+
 	strlen = 0;
 	if (!str)
 		return (strlen);
@@ -30,15 +30,21 @@ char	*ft_strdup(char *src)
 	char	*str;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!str)
 		return (NULL);
 	while (src[i])
 	{
 		str[i] = src[i];
+		if (src[i] == '\n')
+		{
+			i++;
+			break ;
+		}
 		i++;
 	}
-
 	str[i] = '\0';
 	return (str);
 }
