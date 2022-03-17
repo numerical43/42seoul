@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/17 21:29:52 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/17 21:52:41 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -18,7 +18,7 @@ char	*clean_line(char *line)
 	char	*temp;
 
 	i = 0;
-	j = 0;
+	j = -1;
 	while (line[i] && line[i] != '\n')
 		i++;
 	if (line[i] == '\n')
