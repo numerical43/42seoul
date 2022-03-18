@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:02:18 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/17 22:09:46 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/18 17:46:37 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -53,6 +53,8 @@ char	*get_line(char *line, int fd)
 			break ;
 		buffer[size] = '\0';
 		line = ft_strjoin(line, buffer);
+		if (size < BUFFER_SIZE)
+			break ;
 	}
 	free(buffer);
 	if (size == -1)
