@@ -6,7 +6,7 @@
 #    By: suekang <suekang@student.42seoul>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:03:24 by suekang           #+#    #+#              #
-#    Updated: 2022/01/25 20:01:18 by suekang          ###   ########.fr        #
+#    Updated: 2022/03/19 13:37:08 by suekang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,25 @@ SRCS =  ft_isdigit.c      \
 		ft_putendl_fd.c   \
 		ft_putnbr_fd.c
 
+SRCS_B = ft_lstadd_back.c	\
+		 ft_lstadd_front.c	\
+		 ft_lstclear.c		\
+		 ft_lstdelone.c		\
+		 ft_lstiter.c		\
+		 ft_lstlast.c		\
+		 ft_lstmap.c		\
+		 ft_lstnew.c		\
+		 ft_lstsize.c
+
 OBJS = $(SRCS:.c=.o)
+
+OBJS_B = $(SRCS_B:.c=.o)
+
+ifdef B_FLAG
+	OBJS_ALL = $(OBJS_B) $(OBJS)
+else
+	OBJS_ALL = $(OBJS)
+endif
 
 $(NAME) : $(OBJS)
 	$(AR) $(RCS) $@ $^
@@ -63,8 +81,11 @@ $(NAME) : $(OBJS)
 
 all: $(NAME)
 
+bonus: $(OBJS_B)
+	make B_FLAG=1 all
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
 	$(RM) $(NAME)

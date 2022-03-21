@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 19:23:21 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/18 19:24:44 by suekang          ###   ########.fr       */
+/*   Updated: 2022/03/19 13:58:04 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
-		lst->content = f(lst->content);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
