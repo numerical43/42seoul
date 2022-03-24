@@ -1,41 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 14:21:05 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/24 17:20:55 by suekang          ###   ########.fr       */
+/*   Created: 2022/03/24 14:21:39 by suekang           #+#    #+#             */
+/*   Updated: 2022/03/24 16:43:25 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
-parse_frmtspecifer(va_list ap, const char *format)
-{
-	while(!ap)
-	{
-		va_arg(ap, format);
-		if (ap == '%')
-		{
-			va_arg(ap, format);
-			break ;
-		}
-	}
-	
-}
+int	ft_printf(const char *format, ...);
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	ap;
-
-	va_start(ap, format);
-	parse_frmtspecifer(ap, format);
-	va_end(ap);
-	return ();
-}
-void main()
-{
-	
-}
+#endif
