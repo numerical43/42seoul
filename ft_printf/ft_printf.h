@@ -23,6 +23,14 @@ typedef struct s_list
   int count;
 } s_list;
 
-int	ft_printf(const char *format, ...);
+int	  ft_printf(const char *format, ...);
+void  ifchar(s_list ap);
+void  ifstr(s_list ap);
+void  ifhex(s_list ap);
+void  ifint(s_list ap);
+void  ifpointer(s_list ap);
+void  ifpercent(s_list ap);
+void  ifunsignedint(s_list ap);
+void  ifelsechar(s_list ap, const char format);
 
 #endif
