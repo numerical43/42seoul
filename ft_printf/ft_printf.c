@@ -12,31 +12,57 @@
 
 #include "ft_printf.h"
 
-parse_frmtspecifer(va_list ap, const char *format)
+s_list	*init_ap(ap)
 {
-	while(!ap)
+	ap->count = 0;
+}
+
+void	check_specifer(s_list *ap, const char format)
+{
+	if (format == 'c')
+		ifchar(ap);
+	else if (format == 's')
+		ifstr(ap);
+	else if (format == 'p')
+		ifpointer(ap);
+	else if (format == 'u')
+		ifunsignedint(ap);
+	else if (format == 'i' || format == 'd')
+		ifint(ap);
+	else if (format == 'x' || format == 'X')
+		ifhex(ap);
+	else if (format == '%')
+		ifpercent(ap);
+	else if (format == '\0')
+		return ;
+	else
+		ifelsechar(format, ap);
+}
+
+void	parse_specifer(s_list *ap, const char format)
+{
+	while(!format)
 	{
-		va_arg(ap, format);
-		if (ap == '%')
-		{
-			va_arg(ap, format);
-			break ;
-		}
+		if (format == '%')
+			check _specifer(format, ap);
+		else 
+			ft_putchar_fd(format, 1);
+		va_arg(ap->args, format);
 	}
-	
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	*ap;
+	s_list	*ap;
 	int	resultprint;
 	
 	resultprint = 0;
 	init_ap(ap);
-	va_start(ap->arg, format);
-	parse_specifer(ap->arg, format);
-	va_end(ap);
-	return ();
+	va_start(ap->args, format);
+	parse_specifer(ap->args, format);
+	resultprint = ap->count;
+	va_end(ap->args);
+	return (resultprint);
 }
 void main()
 {
