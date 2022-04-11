@@ -12,11 +12,6 @@
 
 #include "ft_printf.h"
 
-s_list	*init_ap(ap)
-{
-	ap->count = 0;
-}
-
 void	check_specifer(s_list *ap, const char format)
 {
 	if (format == 'c')
@@ -47,7 +42,7 @@ void	parse_specifer(s_list *ap, const char format)
 			check _specifer(format, ap);
 		else 
 			ft_putchar_fd(format, 1);
-		va_arg(ap->args, format);
+		va_arg(ap->args, unsigned char);
 	}
 }
 
@@ -56,12 +51,16 @@ int	ft_printf(const char *format, ...)
 	s_list	*ap;
 	int	resultprint;
 	
+	ap = (s_list *)malloc(sizeof(s_list));
+	if (!ap)
+		return (NULL);
+	ap->count = 0;
 	resultprint = 0;
-	init_ap(ap);
 	va_start(ap->args, format);
 	parse_specifer(ap->args, format);
 	resultprint = ap->count;
 	va_end(ap->args);
+	free(ap);
 	return (resultprint);
 }
 void main()
