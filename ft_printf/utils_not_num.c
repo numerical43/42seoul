@@ -1,4 +1,4 @@
-void	ifcharacter(s_list *ap)
+void	ifchar(s_list *ap)
 {
 	char result;
 	
@@ -7,7 +7,7 @@ void	ifcharacter(s_list *ap)
 	ap->count++;	
 }
 
-void	ifstring(s_list *ap)
+void	ifstr(s_list *ap)
 {
 	char	*result;
 	
