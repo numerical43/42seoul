@@ -15,6 +15,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include "libft.h"
+
+typedef struct s_list
+{
+  va_list args;
+  int count;
+} s_list;
 
 int	ft_printf(const char *format, ...);
 
