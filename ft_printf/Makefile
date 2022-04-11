@@ -13,7 +13,7 @@ SRCS =  ft_printf.c      \
 OBJS = $(SRCS:.c=.o)
 LIBFT_OBJECTS = libft/*.o
 
-$(NAME) : $(OBJS) libft
+$(NAME) : $(OBJS) $(LIBFT_OBJECTS)
   
 	$(AR) $(RCS) $@ $^
 
