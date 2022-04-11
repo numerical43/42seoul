@@ -31,7 +31,7 @@ void	check_specifer(s_list *ap, const char format)
 	else if (format == '\0')
 		return ;
 	else
-		ifelsechar(format, ap);
+		ifelsechar(ap, format);
 }
 
 void	parse_specifer(s_list *ap, const char format)
