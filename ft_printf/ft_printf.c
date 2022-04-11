@@ -28,10 +28,13 @@ parse_frmtspecifer(va_list ap, const char *format)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	ap;
-
-	va_start(ap, format);
-	parse_frmtspecifer(ap, format);
+	va_list	*ap;
+	int	resultprint;
+	
+	resultprint = 0;
+	init_ap(ap);
+	va_start(ap->arg, format);
+	parse_specifer(ap->arg, format);
 	va_end(ap);
 	return ();
 }
