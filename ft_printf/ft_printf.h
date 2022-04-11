@@ -32,5 +32,6 @@ void  ifpointer(s_list ap);
 void  ifpercent(s_list ap);
 void  ifunsignedint(s_list ap);
 void  ifelsechar(s_list ap, const char format);
+static void	make_hex(unsigned int num, int strlen)
 
 #endif
