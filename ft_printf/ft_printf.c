@@ -36,13 +36,17 @@ void	check_specifer(s_list *ap, const char format)
 
 void	parse_specifer(s_list *ap, const char format)
 {
-	while(!format)
+	int	i;
+	
+	i = 0;
+	while(!format[i])
 	{
-		if (format == '%')
-			check _specifer(format, ap);
+		if (format[i] == '%')
+			check _specifer(format[++i], ap);
 		else 
-			ft_putchar_fd(format, 1);
-		va_arg(ap->args, unsigned char);
+			ft_putchar_fd(format[i], 1);
+		//va_arg(ap->args, unsigned char);
+		i++;
 	}
 }
 
