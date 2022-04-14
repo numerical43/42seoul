@@ -8,7 +8,10 @@ CC_FLAGS = -Wall -Wextra -Werror
 SRCS =  ft_printf.c      \
       utils_num.c      \
       utils_not_num.c      \
-LIBFT_SRCS = libft/
+LIBFT_SRCS = libft/ft_putchar_fd.c	\
+	libft/ft_putstr_fd.c	\
+	libft/ft_strlen.c	\
+	libft/ft_itoa.c	\
 
 OBJS = $(SRCS:.c=.o)
 LIBFT_OBJECTS = $(LIBFT_SRCS:.c=.o)
