@@ -32,6 +32,24 @@ void	ifpointer(s_list *ap)
 	
 	len = 1;
 	num = va_list(ap->arg, unsigned long);	
+	
+	len = 1;
+	result = numberlength(num, &len);
+	ft_putstr_fd("0x", 1);
+	ap->count = ap->count + 2;
+	len--;
+	while (length >= 0)
+	{
+		if (num % 16 < 10)
+			result[len] = '0' + (num % 16);
+		else
+			result[len] = 'a' + (num % 16) - 10;
+		num = num / 16;
+		len--;
+		ap->count++;
+	}
+	ft_putstr_fd(result, 1);
+	free(result);
 }
 
 void ifelsechar(s_list *ap, const char format)
