@@ -1,4 +1,4 @@
-static int	count_index(unsigned int n)
+int	count_index(unsigned int n)
 {
 	int	i;
 
