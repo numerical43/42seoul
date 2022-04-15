@@ -45,7 +45,7 @@ void	parse_specifer(s_list *ap, const char format)
 			check _specifer(format[++i], ap);
 		else 
 			ft_putchar_fd(format[i], 1);
-		//va_arg(ap->args, unsigned char);
+		ap->count++;
 		i++;
 	}
 }
