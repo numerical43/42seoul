@@ -20,7 +20,7 @@ void	ifunsignedint(s_list *ap)
 	ap->count = ap->count + ft_strlen(result);
 }
 
-static void	make_hex(unsigned int num, int strlen)
+static char	*make_hex(unsigned int num, int strlen)
 {
 	char	*hex;
 	
@@ -41,23 +41,48 @@ void	ifhex(s_list *ap, char c)
 {
 	unsigned int	num;
 	char *result;
-	int		strlen;
+	int		i;
 	
 	strlen = 1;
 	num = va_arg(ap->arg, unsigned int);
-	result = make_hex(num, strlen);
-	while (strlen >= 0)
+	result = make_hex(num, i);
+	while (i >= 0)
 	{
 		if ((num % 16) < 10)
-      			result[strlen] = '0' + (num % 16);
+      			result[i] = '0' + (num % 16);
 		else if (c == 'x')
-			result[strlen] = 'a' - 10 + (num % 16);
+			result[i] = 'a' - 10 + (num % 16);
 		else if (c == 'X')
-			result[strlen] = 'A' - 10 + (num % 16);
+			result[i] = 'A' - 10 + (num % 16);
 		num = num / 16;
-		strlen--;
+		i--;
 	}
 	ft_putstr_fd(result, 1);
 	ap->count = ap->count + ft_strlen(result);
 	free(result);	
+}
+
+void	ifpointer(s_list *ap)
+{
+	int		i;
+	char	*result;
+	unsigned long num;
+	
+	i = 1;
+	num = va_list(ap->arg, unsigned long);	
+	result = make_hex(num, i);
+	ft_putstr_fd("0x", 1);
+	ap->count = ap->count + 2;
+	while (i >= 0)
+	{
+		if (num % 16 < 10)
+			result[i] = '0' + (num % 16);
+		else
+			result[i] = 'a' + (num % 16) - 10;
+		num = num / 16;
+		i--;
+	}
+	ft_putstr_fd(result, 1);
+	ap->count = ap->count + ft_strlen(result);
+	free(result);
 }
