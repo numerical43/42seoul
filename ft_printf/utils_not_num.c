@@ -24,6 +24,16 @@ void	ifstr(s_list *ap)
 	}
 }
 
+void	ifpointer(s_list *ap)
+{
+	int		len;
+	char	*result;
+	unsigned long num;
+	
+	len = 1;
+	num = va_list(ap->arg, unsigned long);	
+}
+
 void ifelsechar(s_list *ap, const char format)
 {
 	ft_putchar_fd(format, 1);
