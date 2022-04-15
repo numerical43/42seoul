@@ -9,39 +9,13 @@ void	ifint(s_list *ap)
 	ap->count = ap->count + ft_strlen(result);
 }
 
-
-char	*ft_unsigned_itoa(unsigned int n)
-{
-	char			*c;
-	int				i;
-
-	i = nbindex(n);
-	c = (char *)malloc(sizeof(char) * (i + 1));
-	if (c == NULL)
-		return (NULL);
-	c[i--] = '\0';
-	if (nb == 0)
-		c[0] = '0';
-	if (n < 0)
-	{
-		c[0] = '-';
-		nb = -nb;
-	}
-	while (nb)
-	{
-		c[i--] = nb % 10 + '0';
-		nb = nb / 10;
-	}
-	return (c);
-}
-
 void	ifunsignedint(s_list *ap)
 {
 	char	*result;
 	unsigned int	num;
 	
 	num = va_arg(ap->arg, unsigned int);
-	result = ft_itoa(num);
+	result = ft_unsigned_itoa(num);
 	ft_putstr_fd(str, 1);
 	ap->count = ap->count + ft_strlen(result);
 }
