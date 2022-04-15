@@ -20,7 +20,7 @@ void	ifunsignedint(s_list *ap)
 	ap->count = ap->count + ft_strlen(result);
 }
 
-static char	*make_hex(unsigned int num, int strlen)
+char	*make_hex(unsigned int num, int strlen)
 {
 	char	*hex;
 	
