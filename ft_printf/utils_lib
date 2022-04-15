@@ -17,10 +17,8 @@ char	*ft_itoa(unsigned int n)
 {
 	char			*c;
 	int				i;
-	unsigned int	nb;
 
 	i = nbindex(n);
-	nb = (unsigned int)n;
 	c = (char *)malloc(sizeof(char) * (i + 1));
 	if (c == NULL)
 		return (NULL);
