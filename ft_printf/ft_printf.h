@@ -34,6 +34,6 @@ void  ifunsignedint(s_list ap);
 void  ifelsechar(s_list ap, const char format);
 char	*ft_unsigned_itoa(unsigned int n);
 static int	count_index(unsigned int n);
-static void	make_hex(unsigned int num, int strlen);
+static char	*make_hex(unsigned int num, int strlen);
 
 #endif
