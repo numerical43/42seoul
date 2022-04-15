@@ -1,4 +1,4 @@
-static int	nbindex(int n)
+static int	count_index(int n)
 {
 	int	i;
 
@@ -18,7 +18,7 @@ char	*ft_unsigned_itoa(unsigned int n)
 	char			*c;
 	int				i;
 
-	i = nbindex(n);
+	i = count_index(n);
 	c = (char *)malloc(sizeof(char) * (i + 1));
 	if (c == NULL)
 		return (NULL);
