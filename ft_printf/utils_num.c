@@ -39,7 +39,7 @@ static void	make_hex(unsigned int num, int strlen)
 
 void	ifhex(s_list *ap, char c)
 {
-  unsigned int	num;
+	unsigned int	num;
 	char *result;
 	int		strlen;
 	
@@ -49,7 +49,7 @@ void	ifhex(s_list *ap, char c)
 	while (strlen >= 0)
 	{
 		if ((num % 16) < 10)
-      result[strlen] = '0' + (num % 16);
+      			result[strlen] = '0' + (num % 16);
 		else if (c == 'x')
 			result[strlen] = 'a' - 10 + (num % 16);
 		else if (c == 'X')
@@ -60,15 +60,4 @@ void	ifhex(s_list *ap, char c)
 	ft_putstr_fd(result, 1);
 	ap->count = ap->count + ft_strlen(result);
 	free(result);	
-}
-
-void	ifpointer(s_list *ap)
-{
-	int		len;
-	char	*result;
-	unsigned long num;
-	
-	len = 1;
-	num = va_list(ap->arg, unsigned long);
-	
 }
