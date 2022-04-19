@@ -3,24 +3,20 @@ RM = rm -f
 AR = ar
 RCS = rcs
 CC = gcc
-CC_FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+
+LIBFT_DIR = ./libft
 
 SRCS =  ft_printf.c	\
       utils_num.c	\
       utils_not_num.c	\
-
-LIBFT_SRCS = libft/ft_putchar_fd.c	\
-	libft/ft_putstr_fd.c		\
-	libft/ft_strlen.c		\
-	libft/ft_itoa.c			\
-	libft/ft_atoi.c			\
+      ft_unsigned_int.c	\
 
 OBJS = $(SRCS:.c=.o)
-	
-LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 
-$(NAME) : $(OBJS) $(LIBFT_OBJS)
-  
+$(NAME) : $(OBJS) 
+  	$(MAKE) -C $(LIBFT_DIR)
+	cp $(LIBFT_DIR)/libft.a $@
 	$(AR) $(RCS) $@ $^
 
 %.o : %.c
@@ -29,9 +25,11 @@ $(NAME) : $(OBJS) $(LIBFT_OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(LIBFT_OBJS)
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(RM) $(OBJS)
 
 fclean: clean
+	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(RM) $(NAME)
 
 re: fclean all
