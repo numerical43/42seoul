@@ -12,37 +12,37 @@
 
 #include "ft_printf.h"
 
-void	check_specifer(s_list *ap, const char format)
+void	check_specifer(my_list *ap, const char format)
 {
 	if (format == 'c')
-		ifchar(ap);
+		if_char(ap);
 	else if (format == 's')
-		ifstr(ap);
+		if_str(ap);
 	else if (format == 'p')
-		ifpointer(ap);
+		if_pointer(ap);
 	else if (format == 'u')
-		ifunsignedint(ap);
+		if_unsignedint(ap);
 	else if (format == 'i' || format == 'd')
-		ifint(ap);
+		if_int(ap);
 	else if (format == 'x' || format == 'X')
-		ifhex(ap);
+		if_hex(ap, format);
 	else if (format == '%')
-		ifpercent(ap);
+		if_percent(ap);
 	else if (format == '\0')
 		return ;
 	else
-		ifelsechar(ap, format);
+		if_elsechar(ap, format);
 }
 
-void	parse_specifer(s_list *ap, const char format)
+void	parse_specifer(my_list *ap, const char *format)
 {
 	int	i;
 	
 	i = 0;
-	while(!format[i])
+	while(!(format[i]))
 	{
 		if (format[i] == '%')
-			check _specifer(format[++i], ap);
+			check_specifer(ap, format[i]);
 		else 
 			ft_putchar_fd(format[i], 1);
 		ap->count++;
@@ -52,22 +52,18 @@ void	parse_specifer(s_list *ap, const char format)
 
 int	ft_printf(const char *format, ...)
 {
-	s_list	*ap;
+	my_list	*ap;
 	int	resultprint;
 	
-	ap = (s_list *)malloc(sizeof(s_list));
+	ap = (my_list *)malloc(sizeof(my_list));
 	if (!ap)
-		return (NULL);
+		return (0);
 	ap->count = 0;
 	resultprint = 0;
 	va_start(ap->args, format);
-	parse_specifer(ap->args, format);
+	parse_specifer(ap, format);
 	resultprint = ap->count;
 	va_end(ap->args);
 	free(ap);
 	return (resultprint);
-}
-void main()
-{
-	
 }

@@ -15,25 +15,30 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "libft.h"
 
 typedef struct s_list
 {
   va_list args;
   int count;
-} s_list;
+}	my_list;
 
-int	  ft_printf(const char *format, ...);
-void  ifchar(s_list ap);
-void  ifstr(s_list ap);
-void  ifhex(s_list ap);
-void  ifint(s_list ap);
-void  ifpointer(s_list ap);
-void  ifpercent(s_list ap);
-void  ifunsignedint(s_list ap);
-void  ifelsechar(s_list ap, const char format);
+int	ft_printf(const char *format, ...);
+void	if_char(my_list *ap);
+void	if_str(my_list *ap);
+void	if_hex(my_list *ap, char c);
+void	if_int(my_list *ap);
+void	if_pointer(my_list *ap);
+void	if_percent(my_list *ap);
+void	if_unsignedint(my_list *ap);
+void	if_elsechar(my_list *ap, const char format);
 char	*ft_unsigned_itoa(unsigned int n);
 int	count_index(unsigned int n);
-char	*make_hex(unsigned int num, int strlen);
+char	*make_hex(unsigned long num, int strlen);
+
+int	ft_atoi(const char *str);
+char 	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int c);
+size_t	ft_strlen(const char *str);
 
 #endif

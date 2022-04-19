@@ -1,26 +1,28 @@
-void	ifint(s_list *ap)
+#include "ft_printf.h"
+
+void	if_int(my_list *ap)
 {
 	char	*result;
 	int		num;
 	
-	num = va_arg(ap->arg, int);
+	num = va_arg(ap->args, int);
 	result = ft_itoa(num);
 	ft_putstr_fd(result, 1);
 	ap->count = ap->count + ft_strlen(result);
 }
 
-void	ifunsignedint(s_list *ap)
+void	if_unsignedint(my_list *ap)
 {
 	char	*result;
 	unsigned int	num;
 	
-	num = va_arg(ap->arg, unsigned int);
+	num = va_arg(ap->args, unsigned int);
 	result = ft_unsigned_itoa(num);
-	ft_putstr_fd(str, 1);
+	ft_putstr_fd(result, 1);
 	ap->count = ap->count + ft_strlen(result);
 }
 
-char	*make_hex(unsigned int num, int strlen)
+char	*make_hex(unsigned long num, int strlen)
 {
 	char	*hex;
 	
@@ -33,19 +35,19 @@ char	*make_hex(unsigned int num, int strlen)
 	if (!hex)
 		return (NULL);
 	hex[strlen] = '\0';
-	strlen--;
 	return (hex);
 }
 
-void	ifhex(s_list *ap, char c)
+void	if_hex(my_list *ap, char c)
 {
-	unsigned int	num;
+	unsigned long	num;
 	char *result;
 	int		i;
 	
-	strlen = 1;
-	num = va_arg(ap->arg, unsigned int);
+	i = 1
+	num = va_arg(ap->args, unsigned int);
 	result = make_hex(num, i);
+	i = ft_strlen(result) - 1;
 	while (i >= 0)
 	{
 		if ((num % 16) < 10)
@@ -62,14 +64,14 @@ void	ifhex(s_list *ap, char c)
 	free(result);	
 }
 
-void	ifpointer(s_list *ap)
+void	if_pointer(my_list *ap)
 {
 	int		i;
 	char	*result;
 	unsigned long num;
 	
-	i = 1;
-	num = va_list(ap->arg, unsigned long);	
+	i = 7;
+	num = va_arg(ap->args, unsigned long);	
 	result = make_hex(num, i);
 	ft_putstr_fd("0x", 1);
 	ap->count = ap->count + 2;

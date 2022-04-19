@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 int	count_index(unsigned int n)
 {
 	int	i;
