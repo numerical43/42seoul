@@ -19,17 +19,10 @@ CC_FLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 
 SRCS = ft_strlen.c       \
-<<<<<<< HEAD
        ft_atoi.c         \
        ft_itoa.c         \
        ft_putchar_fd.c   \
        ft_putstr_fd.c    \
-=======
-		ft_atoi.c         \
-		ft_itoa.c         \
-		ft_putchar_fd.c   \
-		ft_putstr_fd.c    \
->>>>>>> f09169e47b02d743ccbe206875ab5c7900f735a6
 
 OBJS = $(SRCS:.c=.o)
 

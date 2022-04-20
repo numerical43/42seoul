@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> f09169e47b02d743ccbe206875ab5c7900f735a6
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -19,7 +15,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-int		ft_atoi(const char *str);
+int	ft_atoi(const char *str);
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
