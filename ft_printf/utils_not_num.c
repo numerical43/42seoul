@@ -17,10 +17,13 @@ void	if_str(my_list *ap)
 	if (!result)
 	{
 		ft_putstr_fd("(null)", 1);
-		ap->count++;
+		ap->count = ap->count + 6;
 	}
 	else
-		ap->count = ap->count + ft_strlen(result);;
+	{
+		ft_putstr_fd(result, 1);
+		ap->count = ap->count + ft_strlen(result);
+	}
 }
 
 void	if_elsechar(my_list *ap, const char format)

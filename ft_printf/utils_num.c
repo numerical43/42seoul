@@ -11,7 +11,7 @@ void	if_int(my_list *ap)
 	ap->count = ap->count + ft_strlen(result);
 }
 
-void	if_unsignedint(my_list *ap)
+void	if_unsigned_int(my_list *ap)
 {
 	char	*result;
 	unsigned int	num;
@@ -44,7 +44,7 @@ void	if_hex(my_list *ap, char c)
 	char *result;
 	int		i;
 	
-	i = 1
+	i = 1;
 	num = va_arg(ap->args, unsigned int);
 	result = make_hex(num, i);
 	i = ft_strlen(result) - 1;
@@ -70,9 +70,16 @@ void	if_pointer(my_list *ap)
 	char	*result;
 	unsigned long num;
 	
-	i = 7;
-	num = va_arg(ap->args, unsigned long);	
+	i = 1;
+	num = va_arg(ap->args, unsigned long);
+	if (!num)
+	{
+		ft_putstr_fd("(nil)", 1);
+		ap->count = ap->count + 5;
+		return ;
+	}
 	result = make_hex(num, i);
+	i = ft_strlen(result) - 1;
 	ft_putstr_fd("0x", 1);
 	ap->count = ap->count + 2;
 	while (i >= 0)

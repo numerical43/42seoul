@@ -29,7 +29,7 @@ void	if_hex(my_list *ap, char c);
 void	if_int(my_list *ap);
 void	if_pointer(my_list *ap);
 void	if_percent(my_list *ap);
-void	if_unsignedint(my_list *ap);
+void	if_unsigned_int(my_list *ap);
 void	if_elsechar(my_list *ap, const char format);
 char	*ft_unsigned_itoa(unsigned int n);
 int	count_index(unsigned int n);

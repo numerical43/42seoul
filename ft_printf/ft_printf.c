@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	check_specifer(my_list *ap, const char format)
+static void	check_specifer(my_list *ap, const char format)
 {
 	if (format == 'c')
 		if_char(ap);
@@ -21,7 +21,7 @@ void	check_specifer(my_list *ap, const char format)
 	else if (format == 'p')
 		if_pointer(ap);
 	else if (format == 'u')
-		if_unsignedint(ap);
+		if_unsigned_int(ap);
 	else if (format == 'i' || format == 'd')
 		if_int(ap);
 	else if (format == 'x' || format == 'X')
@@ -34,18 +34,20 @@ void	check_specifer(my_list *ap, const char format)
 		if_elsechar(ap, format);
 }
 
-void	parse_specifer(my_list *ap, const char *format)
+static void	parse_specifer(my_list *ap, const char *format)
 {
 	int	i;
 	
 	i = 0;
-	while(!(format[i]))
+	while(format[i])
 	{
 		if (format[i] == '%')
-			check_specifer(ap, format[i]);
+			check_specifer(ap, format[++i]);
 		else 
+		{
 			ft_putchar_fd(format[i], 1);
-		ap->count++;
+			ap->count++;
+		}
 		i++;
 	}
 }
