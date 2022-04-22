@@ -32,7 +32,7 @@ $(NAME) : $(OBJS)
 	$(AR) $(RCS) $@ $^
 
 %.o : %.c
-	$(CC) $(CC_FLAGS) -c -I headers $< -o $@
+	$(CC) $(CC_FLAGS) -c $< -o $@
 
 all: $(NAME)
 
