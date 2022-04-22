@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/22 17:05:29 by suekang           #+#    #+#             */
+/*   Updated: 2022/04/22 17:16:25 by suekang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	count_index(unsigned int n)
@@ -17,8 +29,8 @@ int	count_index(unsigned int n)
 
 char	*ft_unsigned_itoa(unsigned int n)
 {
-	char			*c;
-	int				i;
+	char	*c;
+	int		i;
 
 	i = count_index(n);
 	c = (char *)malloc(sizeof(char) * (i + 1));

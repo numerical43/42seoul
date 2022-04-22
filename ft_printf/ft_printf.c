@@ -6,13 +6,13 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:21:05 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/24 17:20:55 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/22 17:11:27 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	check_specifer(my_list *ap, const char format)
+static void	check_specifer(t_list *ap, const char format)
 {
 	if (format == 'c')
 		if_char(ap);
@@ -34,16 +34,16 @@ static void	check_specifer(my_list *ap, const char format)
 		if_elsechar(ap, format);
 }
 
-static void	parse_specifer(my_list *ap, const char *format)
+static void	parse_specifer(t_list *ap, const char *format)
 {
 	int	i;
-	
+
 	i = 0;
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 			check_specifer(ap, format[++i]);
-		else 
+		else
 		{
 			ft_putchar_fd(format[i], 1);
 			ap->count++;
@@ -54,10 +54,10 @@ static void	parse_specifer(my_list *ap, const char *format)
 
 int	ft_printf(const char *format, ...)
 {
-	my_list	*ap;
-	int	resultprint;
-	
-	ap = (my_list *)malloc(sizeof(my_list));
+	t_list	*ap;
+	int		resultprint;
+
+	ap = (t_list *)malloc(sizeof(t_list));
 	if (!ap)
 		return (0);
 	ap->count = 0;

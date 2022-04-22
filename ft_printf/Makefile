@@ -7,20 +7,20 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = ./libft
 
-SRCS = ft_printf.c		\
-       utils_num.c		\
+SRCS = ft_printf.c			\
+       utils_num.c			\
        utils_not_num.c		\
        ft_unsigned_itoa.c	\
 
 OBJS = $(SRCS:.c=.o)
 
-$(NAME) : $(OBJS) 
+$(NAME) : $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR)
 	cp $(LIBFT_DIR)/libft.a $@
 	$(AR) $(RCS) $@ $^
 
 %.o : %.c
-	$(CC) $(CC_FLAGS) -c $< -o $@
+	$(CC) $(CC_FLAGS) -c -I headers $< -o $@
 
 all: $(NAME)
 
