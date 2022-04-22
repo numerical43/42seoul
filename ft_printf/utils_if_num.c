@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_num.c                                        :+:      :+:    :+:   */
+/*   utils_if_num.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:12:30 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/22 19:04:34 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/22 20:15:50 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,6 @@ void	if_unsigned_int(t_list *ap)
 	free(result);
 }
 
-char	*make_hex(unsigned long num, int strlen)
-{
-	char	*hex;
-
-	while (num >= 16)
-	{
-		num = num / 16;
-		strlen++;
-	}
-	hex = (char *)malloc(sizeof(char) * (strlen + 1));
-	if (!hex)
-		return (NULL);
-	hex[strlen] = '\0';
-	return (hex);
-}
-
 void	if_hex(t_list *ap, char c)
 {
 	unsigned long	num;
@@ -78,6 +62,20 @@ void	if_hex(t_list *ap, char c)
 	free(result);
 }
 
+void	if_pointer_print(char *result, unsigned long num, int i)
+{
+	while (i >= 0)
+	{
+		if (num % 16 < 10)
+			result[i] = '0' + (num % 16);
+		else
+			result[i] = 'a' - 10 + (num % 16);
+		num = num / 16;
+		i--;
+	}
+	ft_putstr_fd(result, 1);
+}
+
 void	if_pointer(t_list *ap)
 {
 	int				i;
@@ -94,16 +92,7 @@ void	if_pointer(t_list *ap)
 	result = make_hex(num, 1);
 	i = ft_strlen(result) - 1;
 	ft_putstr_fd("0x", 1);
-	while (i >= 0)
-	{
-		if (num % 16 < 10)
-			result[i] = '0' + (num % 16);
-		else
-			result[i] = 'a' - 10 + (num % 16);
-		num = num / 16;
-		i--;
-	}
-	ft_putstr_fd(result, 1);
+	if_pointer_print(result, num, i);
 	ap->count = ap->count + ft_strlen(result) + 2;
 	free(result);
 }

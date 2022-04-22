@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: suekang <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/22 19:14:20 by suekang           #+#    #+#              #
+#    Updated: 2022/04/22 19:14:22 by suekang          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 RM = rm -f
 AR = ar
@@ -8,9 +20,9 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = ./libft
 
 SRCS = ft_printf.c			\
-       utils_num.c			\
-       utils_not_num.c		\
-       ft_unsigned_itoa.c	\
+       utils_if_num.c			\
+       utils_if_not_num.c		\
+       utils_others.c	\
 
 OBJS = $(SRCS:.c=.o)
 

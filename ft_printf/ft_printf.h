@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:21:39 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/22 17:25:57 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/22 19:16:35 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	if_pointer(t_list *ap);
 void	if_percent(t_list *ap);
 void	if_unsigned_int(t_list *ap);
 void	if_elsechar(t_list *ap, const char format);
+void	if_pointer_print(char *result, unsigned long num, int i);
 char	*ft_unsigned_itoa(unsigned int n);
 int		count_index(unsigned int n);
 char	*make_hex(unsigned long num, int strlen);

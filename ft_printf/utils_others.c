@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:05:29 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/22 17:16:25 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/22 19:06:58 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,22 @@ int	count_index(unsigned int n)
 		i++;
 	}
 	return (i);
+}
+
+char	*make_hex(unsigned long num, int strlen)
+{
+	char	*hex;
+
+	while (num >= 16)
+	{
+		num = num / 16;
+		strlen++;
+	}
+	hex = (char *)malloc(sizeof(char) * (strlen + 1));
+	if (!hex)
+		return (NULL);
+	hex[strlen] = '\0';
+	return (hex);
 }
 
 char	*ft_unsigned_itoa(unsigned int n)
