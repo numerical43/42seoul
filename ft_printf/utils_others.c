@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:05:29 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/25 17:17:42 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:42:54 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*make_hex(unsigned long num, int strlen)
 int	count_hex_len(unsigned long num)
 {
 	unsigned long	temp;
-	int			strlen;
+	int				strlen;
 
 	temp = num;
 	strlen = 0;
