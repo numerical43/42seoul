@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:12:30 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/25 17:38:24 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:59:35 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	if_hex(t_list *ap, char c)
 	int				i;
 
 	i = 1;
-	num = va_arg(ap->args, unsigned long);
+	num = va_arg(ap->args, unsigned int);
 	result = make_hex(num, i);
 	i = count_hex_len(num);
 	while (i >= 0)
