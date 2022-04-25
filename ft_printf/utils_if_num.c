@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 17:12:30 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/22 20:39:03 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:38:24 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	if_hex(t_list *ap, char c)
 	int				i;
 
 	i = 1;
-	num = va_arg(ap->args, unsigned int);
+	num = va_arg(ap->args, unsigned long);
 	result = make_hex(num, i);
-	i = ft_strlen(result) - 1;
+	i = count_hex_len(num);
 	while (i >= 0)
 	{
 		if ((num % 16) < 10)
@@ -90,7 +90,7 @@ void	if_pointer(t_list *ap)
 		return ;
 	}
 	result = make_hex(num, 1);
-	i = ft_strlen(result) - 1;
+	i = count_hex_len(num);
 	ft_putstr_fd("0x", 1);
 	if_pointer_print(result, num, i);
 	ap->count = ap->count + ft_strlen(result) + 2;

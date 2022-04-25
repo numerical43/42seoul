@@ -6,7 +6,7 @@
 #    By: suekang <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/22 19:14:20 by suekang           #+#    #+#              #
-#    Updated: 2022/04/22 19:14:22 by suekang          ###   ########.fr        #
+#    Updated: 2022/04/25 16:25:47 by suekang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = ./libft
 
 SRCS = ft_printf.c			\
-       utils_if_num.c			\
-       utils_if_not_num.c		\
-       utils_others.c	\
+       utils_if_num.c		\
+       utils_if_not_num.c	\
+       utils_others.c		\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -32,7 +32,7 @@ $(NAME) : $(OBJS)
 	$(AR) $(RCS) $@ $^
 
 %.o : %.c
-	$(CC) $(CC_FLAGS) -c -I headers $< -o $@
+	$(CC) $(CC_FLAGS) -c $< -o $@
 
 all: $(NAME)
 

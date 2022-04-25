@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:21:39 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/22 19:16:35 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:13:21 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	if_pointer_print(char *result, unsigned long num, int i);
 char	*ft_unsigned_itoa(unsigned int n);
 int		count_index(unsigned int n);
 char	*make_hex(unsigned long num, int strlen);
+int		count_hex_len(unsigned long num);
 
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
