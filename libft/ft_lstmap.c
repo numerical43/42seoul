@@ -6,24 +6,22 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 14:42:59 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/19 14:43:04 by suekang          ###   ########.fr       */
+/*   Updated: 2022/05/01 17:23:52 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	**firstlst;
 	t_list	*newlst;
 	t_list	**temp;
 	int		flag;
 
 	flag = 1;
+	f(lst);
 	while (lst)
 	{
-		ft_lstiter(lst, *f);
 		newlst = ft_lstnew(lst);
 		if (!newlst)
 		{

@@ -6,13 +6,13 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 19:23:21 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/19 13:58:04 by suekang          ###   ########.fr       */
+/*   Updated: 2022/05/01 17:23:42 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{

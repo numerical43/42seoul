@@ -6,7 +6,7 @@
 /*   By: suekang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 18:30:26 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/18 19:13:30 by suekang          ###   ########.fr       */
+/*   Updated: 2022/05/01 17:38:36 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);
+	lst->next = NULL;
 	free(lst);
 }
-

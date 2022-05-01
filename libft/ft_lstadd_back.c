@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 14:56:56 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/19 14:57:04 by suekang          ###   ########.fr       */
+/*   Updated: 2022/05/01 17:42:48 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (*lst)
-		*lst = (*lst)->next;
-	(*lst)->next = new;
+	t_list	**last;
+
+	last = NULL;
+	if (!(new))
+		return ;
+	if (!(*lst))
+		*lst = new;
+	else
+	{
+		*last = ft_lstlast(*lst);
+		(*last)->next = new;
+	}
+	new->next = NULL;
 }

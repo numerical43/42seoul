@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 14:57:41 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/19 14:57:55 by suekang          ###   ########.fr       */
+/*   Updated: 2022/05/01 17:25:56 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
+	if (!(*lst))
+	{
+		*lst = new;
+		new->next = NULL;
+	}
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

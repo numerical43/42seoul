@@ -6,13 +6,13 @@
 /*   By: suekang <suekang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 14:21:05 by suekang           #+#    #+#             */
-/*   Updated: 2022/04/25 16:16:56 by suekang          ###   ########.fr       */
+/*   Updated: 2022/04/26 19:15:04 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	check_specifer(t_list *ap, const char format)
+void	check_specifer(t_list *ap, const char format)
 {
 	if (format == 'c')
 		if_char(ap);
@@ -34,7 +34,7 @@ static void	check_specifer(t_list *ap, const char format)
 		if_elsechar(ap, format);
 }
 
-static void	parse_specifer(t_list *ap, const char *format)
+void	parse_specifer(t_list *ap, const char *format)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: suekang <suekang@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 14:58:01 by suekang           #+#    #+#             */
-/*   Updated: 2022/03/19 14:58:11 by suekang          ###   ########.fr       */
+/*   Updated: 2022/05/01 17:31:55 by suekang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	while(*lst)
+	if (!(*lst))
+		return ;
+	while (*lst)
 	{
 		temp = (*lst)->next;
-		del((*lst)->content);
-		free(lst);
+		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
-	*lst = NULL;
 }
