@@ -6,7 +6,7 @@
 #    By: suekang <suekang@student.42seoul>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:03:24 by suekang           #+#    #+#              #
-#    Updated: 2022/03/19 13:37:08 by suekang          ###   ########.fr        #
+#    Updated: 2022/05/01 20:30:43 by suekang          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RM = rm -f
 AR = ar
 RCS = rcs
 CC = gcc
-CC_FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 INCLUDES = libft.h
 
 SRCS =  ft_isdigit.c      \
