@@ -1,0 +1,43 @@
+Credentials cache: API:1EF310BD-5258-49C7-ACC2-C07841A16969
+        Principal: suekang@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  9 20:19:56 2021  Sep 10 06:19:56 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
+
+
+Credentials cache: API:A9B98704-C564-4DFC-AA29-764A0ED42DE5
+        Principal: suekang@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  9 20:09:28 2021  Sep 10 06:09:28 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
+
+
+Credentials cache: API:628DC38F-321A-41AF-B0EA-6EBBB2B7B61B
+        Principal: suekang@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  9 19:20:39 2021  Sep 10 05:20:39 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
+
+
+Credentials cache: API:D3CAD945-BE2B-4AFF-A158-8060E15F4905
+        Principal: suekang@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  9 18:59:23 2021  Sep 10 04:59:23 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
+
+
+Credentials cache: API:78CACA37-C26B-46D5-BFA8-6007F5CB89F6
+        Principal: suekang@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  9 18:09:24 2021  Sep 10 04:09:24 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
+
+
+Credentials cache: API:F940B179-E920-4F80-B6FE-4EC193EB70AE
+        Principal: suekang@42SEOUL.KR
+
+  Issued                Expires               Principal
+Sep  9 17:44:15 2021  Sep 10 03:44:15 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
+Sep  9 17:44:16 2021  Sep 10 03:44:15 2021  HTTP/student-storage.42seoul.kr@42SEOUL.KR
+
+
